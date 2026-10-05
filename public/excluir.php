@@ -1,0 +1,14 @@
+<?php
+
+include "../infra/conexao.php";
+
+$id = $_GET["id"];
+
+$stmt = $conexao->prepare("DELETE FROM brinquedos WHERE brinquedo_id = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
+$stmt->close();
+$conexao->close();
+
+?>

@@ -2,17 +2,24 @@
 
 include "../infra/conexao.php";
 
-$nome = ["nome"];
-$categoria = ["categoria"];
-$faixa_etaria = ["faixa_etaria"];
-$preco = ["preco"];
-$estoque = ["estoque"];
-$cadastrar = ["cadastrar"];
+$nome = $_POST["nome"];
+$categoria = $_POST["categoria"];
+$faixa_etaria = $_POST["faixa_etaria"];
+$preco = $_POST["preco"];
+$estoque = $_POST["estoque"];
 
-stmt = "INSERT INTO brinquedos (nome_brinquedo, categoria_brinquedo, faixa_etaria, preco_brinquedo, estoque, cadastrar_brinquedo) values(?, ?, ?, ?, ?)"
+$sql = "INSERT INTO brinquedos (nome_brinquedo, categoria_brinquedo, faixa_etaria, preco_brinquedo, estoque) VALUES (?, ?, ?, ?, ?)";
 
-mysqli_querry($conexao, $sql);
+$stmt = $conexao->prepare($sql);
+
+$stmt->bind_param( "sssdi", $nome, $categoria, $faixa_etaria, $preco, $estoque);
+
+$stmt->execute();
+
+$stmt->close();
+$conexao->close();
 
 header("Location: ../index.php");
+exit;
 
 ?>
