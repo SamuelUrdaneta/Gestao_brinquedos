@@ -29,7 +29,7 @@
         <button type="submit">Cadastrar</button>
     </form>
     <div>
-        <h2>Pratos cadastrados</h2>
+        <h2>Brinquedos cadastrados</h2>
         <table>
             <tr>
                 <th>ID</th>
