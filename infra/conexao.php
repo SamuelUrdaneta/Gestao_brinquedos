@@ -1,0 +1,16 @@
+<?php
+
+$host = "localhost";
+$usuario = "root";
+$senha = "root";
+$banco = "pet_shop"
+
+$conexao = new mysqli($host, $usuario, $senha, $banco);
+
+if ($conexao->connect_error){
+    die("Erro na conexão com o banco" . $conexao->cennect_error);
+};
+
+$conexao->set_charset("uts8m4")
+
+?>

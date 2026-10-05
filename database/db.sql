@@ -1,5 +1,5 @@
-CREATE DATABASE pet_shop;
-USE pet_shop;
+CREATE DATABASE gestao_brinquedos;
+USE gestao_brinquedos;
 
 CREATE TABLE brinquedo{
     brinquedo_id INT AUTO_INCREMENT PRIMARY KEY,
